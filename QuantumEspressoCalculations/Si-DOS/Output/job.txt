@@ -1,0 +1,4 @@
+job id:    
+job start: Tue Jul 14 15:50:59 CDT 2020
+work directory: /scratch/user/eclay/Quantum_Espresso_Phonon/Tutorial_Try
+job end:   Tue Jul 14 16:12:12 CDT 2020

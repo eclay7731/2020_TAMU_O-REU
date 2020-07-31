@@ -1,0 +1,4 @@
+job id:    
+job start: Wed Jul 29 23:49:29 CDT 2020
+work directory: /scratch/user/eclay/Final_Calculations/Cu_SinglePoint_Phonon
+job end:   Wed Jul 29 23:49:47 CDT 2020

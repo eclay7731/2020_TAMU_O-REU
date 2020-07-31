@@ -1,0 +1,4 @@
+job id:    
+job start: Wed Jul 29 20:49:56 CDT 2020
+work directory: /scratch/user/eclay/Final_Calculations/Na-Cl_DOS1
+job end:   Wed Jul 29 21:15:35 CDT 2020

@@ -1,0 +1,52 @@
+﻿#!/bin/bash
+#BSUB -n 10
+#BSUB -R 'span[ptile=10]'
+#BSUB -M 2500
+#BSUB -W 02:00
+#BSUB -x
+#BSUB -J job
+#BSUB -o job.o%J
+#BSUB -e job.e%J
+#BSUB -L /bin/bash
+#BSUB -u eclay@tamu.edu
+#BSUB -R "select[nxt]"    # node-type: nxt, mem256gb, gpu, phi, mem1t, mem2t ...
+
+
+#---------------------- sys setup ----------------------#
+module purge
+#module load  QuantumESPRESSO/6.4.1-intel-2019a 
+module load QuantumESPRESSO/6.0-intel-2016b
+export I_MPI_FABRICS='shm:ofa'
+echo ${J}
+WORKDIR=`pwd`
+
+#---------------------- job setup ----------------------#
+cd ${WORKDIR}
+log=${WORKDIR}/job.txt
+echo "job id:    "${J} > ${log}
+echo "job start: "`date` >> ${log}
+echo "work directory: "$WORKDIR >> $log
+topdir=`pwd`
+
+
+#--------- for QE --------- # 
+prefix=cu
+job=scf
+mpirun -np $LSB_MAX_NUM_PROCESSORS pw.x < $prefix.in.$job > $prefix.out.$job
+
+prefix= cu
+mpirun -np $LSB_MAX_NUM_PROCESSORS ph.x < $prefix.in.ph > $prefix.out.ph
+
+prefix= cu
+mpirun -np $LSB_MAX_NUM_PROCESSORS q2r.x < $prefix.in.q2r > $prefix.out.q2r
+
+prefix= cu
+mpirun -np $LSB_MAX_NUM_PROCESSORS matdyn.x < $prefix.in.matdyn > $prefix.out.matdyn
+
+prefix= cu
+mpirun -np $LSB_MAX_NUM_PROCESSORS plotband.x < $prefix.in.plotband > $prefix.out.plotband
+
+echo "job end:   "`date` >> ${log}
+exit
+
+

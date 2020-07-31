@@ -1,0 +1,4 @@
+job id:    
+job start: Wed Jul 29 21:36:58 CDT 2020
+work directory: /scratch/user/eclay/Final_Calculations/Na-Cl_PhononDispersion
+job end:   Wed Jul 29 21:54:24 CDT 2020

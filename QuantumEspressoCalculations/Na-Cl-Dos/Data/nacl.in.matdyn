@@ -1,0 +1,7 @@
+&input
+	asr = 'simple'
+ 	dos = .true.
+ 	flfrc = 'nacl.k444.fc'
+ 	fldos = 'nacl.phdos'
+ 	nk1=50, nk2=50, nk3=50
+/

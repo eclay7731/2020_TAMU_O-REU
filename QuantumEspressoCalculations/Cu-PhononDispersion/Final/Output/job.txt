@@ -1,0 +1,4 @@
+job id:    
+job start: Thu Jul 30 00:45:49 CDT 2020
+work directory: /scratch/user/eclay/Final_Calculations/Cu_PhononDispersion
+job end:   Thu Jul 30 00:49:57 CDT 2020
