@@ -8,7 +8,7 @@
 #BSUB -o job.o%J
 #BSUB -e job.e%J
 #BSUB -L /bin/bash
-#BSUB -u eclay@tamu.edu
+#BSUB -u filler@tamu.edu
 #BSUB -R "select[nxt]"    # node-type: nxt, mem256gb, gpu, phi, mem1t, mem2t ...
 
 
